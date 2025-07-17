@@ -41,14 +41,14 @@ function Player({
               <>
                 <span className="card-wrapper">
                   <img
-                    src="/deck/hidden.png"
+                    src="./deck/hidden.png"
                     alt="Hidden Card"
                     className="card-img"
                   />
                 </span>
                 <span className="card-wrapper">
                   <img
-                    src="/deck/hidden.png"
+                    src="../deck/hidden.png"
                     alt="Hidden Card"
                     className="card-img"
                   />
