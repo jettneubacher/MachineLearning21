@@ -13,17 +13,17 @@ function Player({
   firstGame,
 }) {
   const cardMap = {
-    1: "/deck/1.png",
-    2: "/deck/2.png",
-    3: "/deck/3.png",
-    4: "/deck/4.png",
-    5: "/deck/5.png",
-    6: "/deck/6.png",
-    7: "/deck/7.png",
-    8: "/deck/8.png",
-    9: "/deck/9.png",
-    10: "/deck/10.png",
-    11: "/deck/11.png",
+    1: "../deck/1.png",
+    2: "../deck/2.png",
+    3: "../deck/3.png",
+    4: "../deck/4.png",
+    5: "../deck/5.png",
+    6: "../deck/6.png",
+    7: "../deck/7.png",
+    8: "../deck/8.png",
+    9: "../deck/9.png",
+    10: "../deck/10.png",
+    11: "../deck/11.png",
   };
 
   return (
