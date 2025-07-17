@@ -1,0 +1,59 @@
+/* Blurred dark background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* The actual mini window */
+.modal-window {
+  background: white;
+  padding: 2rem;
+  width: 400px;
+  max-width: 80%;
+  position: relative;
+  border: 5px solid black;
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.modal-title {
+  color: black;
+}
+/* Optional content styling */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.player-list {
+    list-style: none;
+}
+
+.player-list-item {
+    padding-bottom: 15px;
+    font-size: 12px;
+}
+
+.player-button {
+  padding: 5px;
+  border: 2px solid black;
+}

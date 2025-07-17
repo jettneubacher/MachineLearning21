@@ -1,0 +1,132 @@
+.game {
+    display: flex;
+  flex-direction: column;
+  height: 95vh;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.dealer {
+    padding-top: 5px;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* horizontal center */
+    justify-content: center;
+    text-align: center;
+}
+
+.player_select {
+}
+
+.message-title {
+  margin-bottom: 3px;
+}
+
+.messages {
+    width: 300px; /* adjust as needed */
+    height: 100px; /* fixed height */
+    background-color: #539ec9;
+    border: solid 4px #3c7596;
+    border-radius: 5%;
+    padding-bottom: 10px;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+
+
+.clear-messages {
+    position: absolute;
+    top: 4px;
+    right: 1px;
+    z-index: 1;
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+}
+
+.message-log {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow-y: auto;
+    text-align: left;
+    font-size: 0.65rem;
+    line-height: 1.4;
+    padding: 0.5rem;
+    padding-right: 20px;
+    margin-right: -20px;
+    -ms-overflow-style: none;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+}
+
+.message-log::webkit-scrollbar {
+  width: 4px;
+}
+
+.message-log::-webkit-scrollbar-thumb {
+  background-color: #3c7596;
+  border-radius: 2px;
+}
+
+.message-log::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.message-log::-webkit-scrollbar-button:single-button:vertical {
+  display: none;
+  height: 0;
+}
+
+.message-log::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+  display: none;
+  background: none;
+}
+
+.message-log {
+  scrollbar-width: thin;  /* Firefox */
+  scrollbar-color: #3c7596 transparent;
+}
+
+.message-log > div {
+  margin-bottom: 0.3rem;
+}
+
+.message-log >div:last-child {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.game-buttons {
+  display: flex;
+  width: 300px;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.game-buttons button {
+  width: 150px;
+}
+
+

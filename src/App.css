@@ -1,0 +1,155 @@
+
+:root {
+    --font: 'Press Start 2P', system-ui;
+    --redBase: #e50000;
+    --red: #cc0000;
+    --redBorder: #7f0000;
+
+    --greenBase: #82d43b;
+    --green: #69ab30;
+  --greenBorder: #467d15;
+
+  --blueBase: #3e84ed;
+  --blue: #306bc2;
+  --blueBorder: #28518f;
+
+  --greyBase: #b3b4b5;
+  --greyText: #727273;
+  --grey: #727273;
+  --greyBorder: #3d3d3d;
+
+  --pinkBase: #fa3ef4;
+  --pink: #cf38f5;
+  --pinkBorder: #a82cc7;
+}
+
+body {
+    font-family: var(--font);
+    color: #fff;
+    font-size: 0.8rem;
+    height: 100%;
+    /* background-color: #6bc9ff; */
+    background-color: rgba(107, 201, 255, 0.75); /* ~60% opaque */
+    background-color: #232324;
+    background-color: #93afbf;
+
+}
+/* 33 x 45 */
+.card-img {
+  height: 130px;       /* 2x original height (45 * 2) */
+  width: max-content;
+  image-rendering: pixelated; /* Force nearest-neighbor scaling */
+
+  border-radius: 8px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card-wrapper {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+button {
+    font-family: var(--font);
+}
+
+.pixel-button {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 -4px #fff, 0 -8px #000, 4px 0 #fff, 4px -4px #000, 8px 0 #000, 0 4px #fff, 0 8px #000, -4px 0 #fff, -4px 4px #000, -8px 0 #000, -4px -4px #000, 4px 4px #000;
+    box-sizing: border-box;
+    border: none;
+}
+
+.pixel-button.red {
+    background-color: var(--redBase);
+    box-shadow:
+  0 -4px var(--red),
+  0 -8px var(--redBorder),
+  4px 0 var(--red),
+  4px -4px var(--redBorder),
+  8px 0 var(--redBorder),
+  0 4px var(--red),
+  0 8px var(--redBorder),
+  -4px 0 var(--red),
+  -4px 4px var(--redBorder),
+  -8px 0 var(--redBorder),
+  -4px -4px var(--redBorder),
+  4px 4px var(--redBorder);
+    color: #fff;
+}
+
+.pixel-button.green {
+    background-color: var(--greenBase);
+    box-shadow:
+  0 -4px var(--green),
+  0 -8px var(--greenBorder),
+  4px 0 var(--green),
+  4px -4px var(--greenBorder),
+  8px 0 var(--greenBorder),
+  0 4px var(--green),
+  0 8px var(--greenBorder),
+  -4px 0 var(--green),
+  -4px 4px var(--greenBorder),
+  -8px 0 var(--greenBorder),
+  -4px -4px var(--greenBorder),
+  4px 4px var(--greenBorder);
+    color: #fff;
+}
+
+.pixel-button.blue {
+    background-color: var(--blueBase);
+    color: #fff;
+    box-shadow:
+  0 -4px var(--blue),
+  0 -8px var(--blueBorder),
+  4px 0 var(--blue),
+  4px -4px var(--blueBorder),
+  8px 0 var(--blueBorder),
+  0 4px var(--blue),
+  0 8px var(--blueBorder),
+  -4px 0 var(--blue),
+  -4px 4px var(--blueBorder),
+  -8px 0 var(--blueBorder),
+  -4px -4px var(--blueBorder),
+  4px 4px var(--blueBorder);
+
+}
+
+.pixel-button.grey {
+    background-color: var(--greyBase);
+    color: var(--greyText);
+    box-shadow:
+  0 -4px var(--grey),
+  0 -8px var(--greyBorder),
+  4px 0 var(--grey),
+  4px -4px var(--greyBorder),
+  8px 0 var(--greyBorder),
+  0 4px var(--grey),
+  0 8px var(--greyBorder),
+  -4px 0 var(--grey),
+  -4px 4px var(--greyBorder),
+  -8px 0 var(--greyBorder),
+  -4px -4px var(--greyBorder),
+  4px 4px var(--greyBorder);
+
+}
+
+.pixel-button.pink {
+    background-color: var(--pinkBase);
+    color: #fff;
+    box-shadow:
+  0 -4px var(--pink),
+  0 -8px var(--pinkBorder),
+  4px 0 var(--pink),
+  4px -4px var(--pinkBorder),
+  8px 0 var(--pinkBorder),
+  0 4px var(--pink),
+  0 8px var(--pinkBorder),
+  -4px 0 var(--pink),
+  -4px 4px var(--pinkBorder),
+  -8px 0 var(--pinkBorder),
+  -4px -4px var(--pinkBorder),
+  4px 4px var(--pinkBorder);
+
+}

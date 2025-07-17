@@ -1,0 +1,71 @@
+
+
+.player {
+
+}
+
+.player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-title {
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.player-cards {
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  display: flex;
+}
+
+.card-wrapper {
+  position: relative;
+  margin-left: -50px; /* control overlap spacing */
+  z-index: 1;
+  transition: transform 0.2s;
+}
+
+.card-wrapper:first-child {
+  margin-left: 0; /* no overlap on first card */
+}
+
+.card-wrapper:hover {
+  z-index: 10;
+  transform: translateY(-10px); /* optional: lift on hover */
+}
+
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.actions button {
+  padding: 0.5rem;
+}
+
+.bot-actions .bot-button {
+  padding: 0.5rem;
+  width: 50px;
+}
