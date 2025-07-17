@@ -143,14 +143,14 @@
 
 @media (max-width: 600px) {
   .dealer{
-    padding-top: 2.5rem;
+    padding-top: 2rem;
   }
   .game {
     height: 90vh;
   }
   .player {
     padding-top: 1rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.9rem;
   }
   .overlay {
     font-size: 0.75rem;

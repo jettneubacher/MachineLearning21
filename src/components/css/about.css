@@ -1,3 +1,81 @@
 .about {
-    margin: 7rem;
+    margin-top: 5rem;
+    display: flex;
+    height: 95vh;
+}
+
+.tabs {
+    width: 10%;
+    position: fixed;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.tab-list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.tab-item{}
+
+.tab-button{
+    font-size: 0.8rem;
+    padding-top: 5px;
+}
+
+@media (max-width: 600px) {
+    .tab-button{
+        font-size: 0.6rem;
+    }
+}
+
+.tab-button.selected{
+
+}
+
+.about-content{
+    width: 90%;
+    margin-left: 11%;
+    margin-right: 5%; 
+}
+
+.welcome-tab{
+    text-align: center;
+}
+
+.strat-table {
+    border-collapse: collapse;
+    margin: 2rem;
+    width: fit-content;
+    text-align: center;
+    font-family: var(--font);
+    background: #3c7596;
+}
+
+.hit-cell {
+    background: #cc0000;
+}
+
+.table-top-row {
+    text-align: center;
+}
+
+.strat-table th {
+    border: 2px solid #fff;
+
+}
+
+.strat-table td, .strat-table td {
+    border: 2px solid #fff;
+}
+
+.strat-table td,
+.strat-table th:not(.table-top-row) {
+  width: 2rem;     /* Set your fixed size */
+  height: 2rem;
 }

@@ -7,6 +7,7 @@ import About from "./components/About";
 function App() {
   const [currentPage, setCurrentPage] = useState("about");
   const [currentPlayer, setCurrentPlayer] = useState("User");
+  const [currentTab, setCurrentTab] = useState("welcome");
 
   // backend wake-up
 
@@ -42,7 +43,12 @@ function App() {
     <>
       <Header page={currentPage} setPage={setCurrentPage} />
       {currentPage === "about" && (
-        <About page={currentPage} setPage={setCurrentPage} />
+        <About
+          page={currentPage}
+          setPage={setCurrentPage}
+          tab={currentTab}
+          setTab={setCurrentTab}
+        />
       )}
       {currentPage === "game" && (
         <Game
