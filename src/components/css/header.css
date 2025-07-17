@@ -22,3 +22,12 @@
 .header-button {
   padding: 0.5rem;
 }
+
+@media (max-width: 600px) {
+  .header-button {
+    font-size: 0.7rem;
+  }
+  .header-list {
+    top: 20px;
+  }
+}

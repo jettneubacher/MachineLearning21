@@ -11,6 +11,7 @@ function Player({
   botWait,
   botMove,
   firstGame,
+  round,
 }) {
   const cardMap = {
     1: "./deck/1.png",
@@ -31,7 +32,7 @@ function Player({
       <div class="player-container">
         <div class="player-info">
           <div class="player-title">
-            {currentPlayer === "user" ? "You" : currentPlayer}:{" "}
+            {currentPlayer === "User" ? "You" : currentPlayer}:{" "}
             {firstGame ? 0 : score}
           </div>
         </div>
@@ -39,14 +40,20 @@ function Player({
           <div className="player-cards">
             {firstGame ? (
               <>
-                <span className="card-wrapper">
+                <span
+                  className="card-wrapper animate-card"
+                  style={{ "--i": 1 }}
+                >
                   <img
                     src="./deck/hidden.png"
                     alt="Hidden Card"
                     className="card-img"
                   />
                 </span>
-                <span className="card-wrapper">
+                <span
+                  className="card-wrapper animate-card"
+                  style={{ "--i": 2 }}
+                >
                   <img
                     src="./deck/hidden.png"
                     alt="Hidden Card"
@@ -56,7 +63,11 @@ function Player({
               </>
             ) : (
               hand.map((card, idx) => (
-                <span key={idx} className="card-wrapper">
+                <span
+                  key={`${round}-${idx}`}
+                  className="card-wrapper animate-card"
+                  style={{ "--i": idx + 1 }}
+                >
                   <img
                     src={cardMap[card]}
                     alt={`Card ${card}`}
@@ -68,36 +79,36 @@ function Player({
           </div>{" "}
         </div>
         <div class="actions">
-          {currentPlayer !== "user" && !gameOver && botWait && (
+          {currentPlayer !== "User" && !gameOver && botWait && (
             <div class="bot-actions">
               <button class="pixel-button red bot-button" onClick={botMove}>
                 ▶
               </button>
             </div>
           )}
-          {currentPlayer !== "user" && gameOver && !botWait && (
+          {currentPlayer !== "User" && (gameOver || !botWait) && (
             <div class="bot-actions">
               <button class="pixel-button grey bot-button" onClick={botMove}>
                 ▶
               </button>
             </div>
           )}
-          {currentPlayer === "user" && !gameOver && isTurn && (
+          {currentPlayer === "User" && !gameOver && isTurn && (
             <button class="pixel-button red" onClick={hit}>
               Hit
             </button>
           )}
-          {currentPlayer === "user" && (gameOver || !isTurn) && (
+          {currentPlayer === "User" && (gameOver || !isTurn) && (
             <button class="pixel-button grey" onClick={hit}>
               Hit
             </button>
           )}
-          {currentPlayer === "user" && !gameOver && isTurn && (
+          {currentPlayer === "User" && !gameOver && isTurn && (
             <button class="pixel-button red" onClick={stand}>
               Stand
             </button>
           )}
-          {currentPlayer === "user" && (gameOver || !isTurn) && (
+          {currentPlayer === "User" && (gameOver || !isTurn) && (
             <button class="pixel-button grey" onClick={stand}>
               Stand
             </button>

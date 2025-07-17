@@ -6,25 +6,37 @@ import About from "./components/About";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("about");
-  const [currentPlayer, setCurrentPlayer] = useState("user");
+  const [currentPlayer, setCurrentPlayer] = useState("User");
 
   // backend wake-up
-  /*
+
   const [backendReady, setBackendReady] = useState(false);
-  
+
   useEffect(() => {
-    fetch("https://ml21.onrender.com/ping")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Backend ready:", data);
-        setBackendReady(true);
-      })
-      .catch((err) => {
-        console.error("Backend not ready:", err);
-        setBackendReady(false);
-      });
+    let attempts = 0;
+    const maxAttempts = 12;
+
+    const checkBackend = () => {
+      if (attempts >= maxAttempts) {
+        clearInterval(interval);
+        return;
+      }
+      fetch("https://ml21.onrender.com/ping")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("Backend ready:", data);
+          setBackendReady(true);
+        })
+        .catch((err) => {
+          console.error("Backend not ready:", err);
+          setBackendReady(false);
+        });
+      attempts++;
+    };
+    checkBackend();
+    const interval = setInterval(checkBackend, 5 * 60 * 1000);
+    return () => clearInterval(interval);
   }, []);
-  */
 
   return (
     <>
@@ -36,6 +48,7 @@ function App() {
         <Game
           currentPlayer={currentPlayer}
           setCurrentPlayer={setCurrentPlayer}
+          backendReady={backendReady}
         />
       )}
     </>

@@ -34,14 +34,33 @@ body {
     background-color: #93afbf;
 
 }
+
+@media (max-width: 600px) {
+  .body{
+    font-size: 0.7rem;
+  }
+}
 /* 33 x 45 */
 .card-img {
-  height: 130px;       /* 2x original height (45 * 2) */
-  width: max-content;
+  height: 130px;       /* 45/33 ratio = 1.364 */
+  width: 95px;
   image-rendering: pixelated; /* Force nearest-neighbor scaling */
 
   border-radius: 8px;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+.animate-card {
+  opacity: 0;
+  transform: translateX(60px);
+  animation: fadeSlideIn 0.4s ease-out forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .card-wrapper {
@@ -53,12 +72,15 @@ button {
     font-family: var(--font);
 }
 
+
+
 .pixel-button {
     background-color: #fff;
     color: #000;
     box-shadow: 0 -4px #fff, 0 -8px #000, 4px 0 #fff, 4px -4px #000, 8px 0 #000, 0 4px #fff, 0 8px #000, -4px 0 #fff, -4px 4px #000, -8px 0 #000, -4px -4px #000, 4px 4px #000;
     box-sizing: border-box;
     border: none;
+    cursor: pointer;
 }
 
 .pixel-button.red {

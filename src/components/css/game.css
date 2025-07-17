@@ -13,6 +13,8 @@
   align-items: center;
 }
 
+
+
 .player {
     display: flex;
   flex-direction: column;
@@ -21,6 +23,8 @@
   padding-bottom: 10px;
 }
 
+
+
 .overlay {
     display: flex;
     flex-direction: column;
@@ -28,6 +32,8 @@
     justify-content: center;
     text-align: center;
 }
+
+
 
 .player_select {
 }
@@ -79,6 +85,8 @@
   mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
 }
 
+
+
 .message-log::webkit-scrollbar {
   width: 4px;
 }
@@ -129,4 +137,42 @@
   width: 150px;
 }
 
+.warmup-message {
+  padding-top: 1rem;
+}
 
+@media (max-width: 600px) {
+  .dealer{
+    padding-top: 2.5rem;
+  }
+  .game {
+    height: 90vh;
+  }
+  .player {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  .overlay {
+    font-size: 0.75rem;
+  }
+  .messages {
+    width: 300px; /* adjust as needed */
+    height: 90px; /* fixed height */
+    padding-bottom: 5px;
+  }
+  .message-log{
+    font-size: 0.6rem;
+    line-height: 1.3;
+  }
+  .game-buttons {
+    display: flex;
+    width: 280px;
+    gap: 20px;
+    padding-top: 15px;
+  }
+
+  .game-buttons button {
+    width: 140px;
+    font-size: 0.7rem;
+  }
+}

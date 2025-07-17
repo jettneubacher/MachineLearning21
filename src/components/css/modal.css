@@ -23,6 +23,8 @@
   border: 5px solid black;
 }
 
+
+
 /* Close button */
 .close-button {
   position: absolute;
@@ -46,6 +48,8 @@
 
 .player-list {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .player-list-item {
@@ -56,4 +60,21 @@
 .player-button {
   padding: 5px;
   border: 2px solid black;
+}
+
+@media (max-width: 600px) {
+  .modal-window {
+    background: white;
+  padding: 2rem;
+  width: 240px;
+  max-width: 80%;
+  position: relative;
+  border: 5px solid black;
+  }
+  
+  .player-list-item {
+    padding-bottom: 15px;
+    font-size: 10px;
+    line-height: 25px;
+}
 }

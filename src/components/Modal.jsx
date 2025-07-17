@@ -18,7 +18,7 @@ const Modal = ({ isOpen, onClose, currentPlayer, handlePlayer }) => {
                 <button
                   class="player-button"
                   onClick={() => {
-                    handlePlayer("user");
+                    handlePlayer("User");
                     onClose();
                   }}
                 >

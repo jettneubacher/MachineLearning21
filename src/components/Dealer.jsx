@@ -1,6 +1,6 @@
 import "./css/dealer.css";
 
-function Dealer({ isPlayerTurn, gameOver, hand, score, firstGame }) {
+function Dealer({ isPlayerTurn, gameOver, hand, score, firstGame, round }) {
   const cardMap = {
     1: "./deck/1.png",
     2: "./deck/2.png",
@@ -25,26 +25,30 @@ function Dealer({ isPlayerTurn, gameOver, hand, score, firstGame }) {
         </div>
         <div className="dealer-cards">
           {firstGame ? (
-            <div>
-              <span className="card-wrapper">
+            <>
+              <span className="card-wrapper animate-card" style={{ "--i": 1 }}>
                 <img
                   src="./deck/hidden.png"
                   alt="Hidden Card"
                   className="card-img"
                 />
               </span>
-              <span className="card-wrapper">
+              <span className="card-wrapper animate-card" style={{ "--i": 2 }}>
                 <img
                   src="./deck/hidden.png"
                   alt="Hidden Card"
                   className="card-img"
                 />
               </span>
-            </div>
+            </>
           ) : (
-            <div>
+            <>
               {hand.map((card, idx) => (
-                <span key={idx} className="card-wrapper">
+                <span
+                  key={`${round}-${idx}`}
+                  className="card-wrapper animate-card"
+                  style={{ "--i": idx + 1 }}
+                >
                   {idx === 1 && isPlayerTurn ? (
                     <img
                       src="./deck/hidden.png"
@@ -60,7 +64,7 @@ function Dealer({ isPlayerTurn, gameOver, hand, score, firstGame }) {
                   )}
                 </span>
               ))}
-            </div>
+            </>
           )}
         </div>
       </div>
