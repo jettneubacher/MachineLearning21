@@ -4,7 +4,12 @@ function Header({ page, setPage }) {
   return (
     <div class="header">
       <div class="title">
-        <h1 onClick={() => setPage("about")}>IMG Here</h1>
+        <img
+          src="./images/logo.png"
+          class="logo"
+          alt="Jett's ML 21"
+          onClick={() => setPage("about")}
+        />
       </div>
       <ul class="header-list">
         {page === "game" && (

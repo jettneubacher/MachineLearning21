@@ -103,7 +103,7 @@ const About = ({ page, setPage, tab, setTab }) => {
                 <span class="emphasis">
                   development and testing of ML algorithms
                 </span>
-                . As such, I urge you to learn more about my bots by explporing
+                . As such, I urge you to learn more about my bots by exploring
                 the tabs on the left of the screen. Have fun!
               </p>
             </div>
@@ -1203,7 +1203,7 @@ const About = ({ page, setPage, tab, setTab }) => {
               </p>
               <p>
                 The equation does NOT use a sigmoid function or output
-                probabilites like a logistic regression model.
+                probabilities like a logistic regression model.
               </p>
               <p>
                 Instead, it acts as a{" "}
@@ -1261,6 +1261,13 @@ const About = ({ page, setPage, tab, setTab }) => {
               <p>
                 These 'testing' games were simulated AFTER the Linear Model was
                 trained and the Bot's final weights were set.
+              </p>
+              <p>
+                Bot 3 has the most{" "}
+                <span class="emphasis">conservative play-style</span> with the
+                lowest average score and lowest hit rate. The optimized weights
+                allow Bot 3 to bust 0% of the time, trading higher scores for
+                garunteed hand safety.
               </p>
             </div>
             <div class="tab-group">
@@ -1736,7 +1743,7 @@ const About = ({ page, setPage, tab, setTab }) => {
             </div>
             <div class="tab-group">
               <p>
-                Bot 4 replaces deep recusrive modeling with a simplified proxy
+                Bot 4 replaces deep recursive modeling with a simplified proxy
                 metric.
               </p>
               <p>
@@ -1749,7 +1756,12 @@ const About = ({ page, setPage, tab, setTab }) => {
                 <span class="emphasis">1,000</span> testing games. For every
                 turn in each of these testing games, the bot simulates 10,000
                 futures (totalling to <span class="emphasis">10 Million +</span>{" "}
-                simulations).
+                simulations).{" "}
+              </p>
+              <p>
+                By simulating this many futures for EVERY turn, Bot 4 has the
+                most dynamic decision making, allowing it to perform most
+                optimally (as revealed in Bot 4's win rate).
               </p>
             </div>
             <div class="tab-group">

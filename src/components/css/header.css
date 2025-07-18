@@ -8,6 +8,21 @@
   left: 3%;
 }
 
+.logo {
+  height: 102px;       /* 77x51 , 1.51 */
+  width: 154px;
+  image-rendering: pixelated; /* Force nearest-neighbor scaling */
+
+}
+
+@media (max-width: 750px){
+  .logo{ 
+    height: 51px;
+    width: 77px;
+  }
+}
+
+
 .title h1 {
   cursor: pointer;
 }

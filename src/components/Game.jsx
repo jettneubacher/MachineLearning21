@@ -88,10 +88,17 @@ const Game = ({ currentPlayer, setCurrentPlayer, backendReady }) => {
 
     if (isBlackjack([p1, p2])) {
       await delay(500);
-      setMessage((prev) => [...prev, `21! ${currentPlayer} Wins!`]);
-      setGameOver(true);
-      setIsPlayerTurn(false);
-      return;
+      if (!isBlackjack([d1, d2])) {
+        setMessage((prev) => [...prev, `21! ${currentPlayer} Wins!`]);
+        setGameOver(true);
+        setIsPlayerTurn(false);
+        return;
+      } else {
+        setMessage((prev) => [...prev, "It's a tie, 21 -21"]);
+        setGameOver(true);
+        setIsPlayerTurn(false);
+        return;
+      }
     }
     if (currentPlayer !== "User") {
       await delay(500);
@@ -120,12 +127,13 @@ const Game = ({ currentPlayer, setCurrentPlayer, backendReady }) => {
       currentDScore = calculateTotal(currentDHand);
       setDealerScore(currentDScore);
       setDealerHand(currentDHand);
+      setMessage((prev) => [...prev, "Dealer hits"]);
 
       await delay(1500);
     }
 
     setDeck(finalDeck);
-
+    setMessage((prev) => [...prev, "Dealer stands"]);
     await delay(500);
     // CHECK WINNER
     const pResult = checkWinner(forcedPlayerHand, currentDHand);
