@@ -60,7 +60,7 @@ const Modal = ({ isOpen, onClose, currentPlayer, handlePlayer }) => {
                 >
                   Bot3
                 </button>{" "}
-                - Learned Linear Model
+                - Learned Classifier
               </li>
               <li class="player-list-item">
                 <button
@@ -72,7 +72,7 @@ const Modal = ({ isOpen, onClose, currentPlayer, handlePlayer }) => {
                 >
                   Bot4
                 </button>{" "}
-                - Simulation ML
+                - Simulator
               </li>
               <li class="player-list-item">
                 <button

@@ -125,6 +125,10 @@ const About = ({ page, setPage, tab, setTab }) => {
                 <span class="emphasis">if not better than</span>, the average
                 real player, all thanks to Machine Learning!
               </p>
+              <p>
+                BONUS: I coded every bot with python and python alone... no
+                external ML libraries :)
+              </p>
             </div>
           </div>
         )}
@@ -215,7 +219,37 @@ const About = ({ page, setPage, tab, setTab }) => {
               <h1 class="tab-title">Bot 1</h1>
             </div>
             <div class="tab-group">
-              <p>action = "hit" if total {"<"}= 16 else "stand"</p>
+              <p>
+                Bot 1 is a <span class="emphasis">Rule-Based Classifier</span>.
+              </p>
+              <p>
+                Rule-Based Machine Learning Utilizes if-else statements to
+                create decision logic.
+              </p>
+              <p>
+                Bot 1 is an elegant approach to this principle, using only{" "}
+                <spac class="emphasis">1</spac> if-else statement...
+              </p>
+              <p>
+                This is the "one line of code" bot, which follows this single
+                rule:
+              </p>
+              <p>
+                <span class="emphasis">
+                  action = "hit" if total {"<"}= 16 else "stand"
+                </span>
+              </p>
+            </div>
+            <div class="tab-group">
+              <p>
+                Despite the fact that I designed this bot as a comedic baseline,
+                it performs exceptionally well.
+              </p>
+              <p>
+                The following stats and strategy charts (heatmaps for the bot's
+                behavior) represent data from{" "}
+                <span class="emphasis">1 Million</span> simulated games.
+              </p>
             </div>
             <div class="tab-group">
               <h3 class="tab-title">Performance</h3>
@@ -672,7 +706,34 @@ const About = ({ page, setPage, tab, setTab }) => {
               <h1 class="tab-title">Bot 2</h1>
             </div>
             <div class="tab-group">
-              <p>about bot</p>
+              <p>
+                Bot 2 is an{" "}
+                <span class="emphasis">Imitation-Learning "Model"</span>.
+              </p>
+              <p>
+                {" "}
+                This bot was trained on real player behaviors and created it's
+                own strategy chart.
+              </p>
+              <p>
+                For any given hand, Bot 2 will query its strategy chart for a
+                corresponding action.
+              </p>
+            </div>
+            <div class="tab-group">
+              <p>
+                Because Bot 2 was trained on{" "}
+                <span class="emphasis">real player behavior</span>, it serves as
+                a solid baseline for performance and behavior.
+              </p>
+              <p>
+                The following stats represent data from{" "}
+                <span class="emphasis">1 Million</span> games.
+              </p>
+              <p>
+                Below the stat graphs are the strategy charts that the bot
+                actually uses to make decisions.
+              </p>
             </div>
             <div class="tab-group">
               <h3 class="tab-title">Performance</h3>
@@ -1129,7 +1190,78 @@ const About = ({ page, setPage, tab, setTab }) => {
               <h1 class="tab-title">Bot 3</h1>
             </div>
             <div class="tab-group">
-              <p>about bot</p>
+              <p>
+                Bot 3 is a <span class="emphasis">Linear Classifier</span>.
+              </p>
+              <p>
+                This Bot utilizes an equation to compute a{" "}
+                <span class="emphasis">weighted sum of the game features.</span>
+              </p>
+              <p>
+                If the sum is above a threshold (0 for this case), then the bot
+                will hit.
+              </p>
+              <p>
+                The equation does NOT use a sigmoid function or output
+                probabilites like a logistic regression model.
+              </p>
+              <p>
+                Instead, it acts as a{" "}
+                <span class="emphasis">Linear Threshold Model</span>, making
+                binary decisions.
+              </p>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Bot 3's Equation</h3>
+              <p>
+                <span class="equation">
+                  z = w<sub>0</sub> + (w<sub>1</sub> * player_total) + (w
+                  <sub>2</sub> * dealer_card) + (w<sub>3</sub> * is_soft)
+                </span>
+              </p>
+              <p>
+                <ul class="equation smallList">
+                  <li>If z {">"} 0, then the bot will hit</li>
+                  <li>
+                    w<sub>0</sub> = bias (constant offset to shift hit/stand
+                    threshold)
+                  </li>
+                  <li>
+                    w<sub>1</sub> = weight 1 (determines impact that the player
+                    total score has on the decision)
+                  </li>
+                  <li>
+                    w<sub>2</sub> = weight 2 (determines impact that the dealer
+                    upcard has on the decision)
+                  </li>
+                  <li>
+                    w<sub>3</sub> = weight 3 (determines impact that player's
+                    hand softness has on the decision)
+                  </li>
+                </ul>
+              </p>
+            </div>
+            <div class="tab-group">
+              <p>
+                The equation weights were determined by training the Linear
+                Model on hundreds of thousands of simulated blackjack games.
+              </p>
+              <p>
+                The Model then convereged on optimal weight values (values that
+                resulted in the most wins), which are now hard-coded into Bot
+                3's equation.
+              </p>
+            </div>
+            <div class="tab-group">
+              <p>
+                The following stats and strategy charts (heatmaps for the bot's
+                behavior) represent data from{" "}
+                <span class="emphasis">1 Million</span> simulated games.
+              </p>
+              <p>
+                These 'testing' games were simulated AFTER the Linear Model was
+                trained and the Bot's final weights were set.
+              </p>
             </div>
             <div class="tab-group">
               <h3 class="tab-title">Performance</h3>
@@ -1586,7 +1718,39 @@ const About = ({ page, setPage, tab, setTab }) => {
               <h1 class="tab-title">Bot 4</h1>
             </div>
             <div class="tab-group">
-              <p>about bot</p>
+              <p>
+                Bot 4 is a <span class="emphasis">Monte Carlo Simulator</span>
+              </p>
+              <p>
+                For any given game state, Bot 4 will run 10,000 simulations.
+              </p>
+              <p>
+                These simulations use sampling from the current game state
+                (player hand, dealer upcard) to explore random futures.
+              </p>
+              <p>
+                The Bot then uses these futures to{" "}
+                <span class="emphasis">estimate action outcomes</span> and
+                select the most optimal action.
+              </p>
+            </div>
+            <div class="tab-group">
+              <p>
+                Bot 4 replaces deep recusrive modeling with a simplified proxy
+                metric.
+              </p>
+              <p>
+                This metric is 'safe hit rate'. If the simulated games result in
+                a majority of 'safe-hits', the bot will hit.
+              </p>
+              <p>
+                The following stats and strategy charts (heatmaps for the bot's
+                behavior) represent data from{" "}
+                <span class="emphasis">1,000</span> testing games. For every
+                turn in each of these testing games, the bot simulates 10,000
+                futures (totalling to <span class="emphasis">10 Million +</span>{" "}
+                simulations).
+              </p>
             </div>
             <div class="tab-group">
               <h3 class="tab-title">Performance</h3>
@@ -2043,7 +2207,91 @@ const About = ({ page, setPage, tab, setTab }) => {
               <h1 class="tab-title">Bot 5</h1>
             </div>
             <div class="tab-group">
-              <p>about bot</p>
+              <p>
+                Bot 5 is a <span class="emphasis">Q-Learning Agent</span>
+              </p>
+              <p>
+                In its current and final form, Bot 5 makes decisions by
+                referencing a stagnant Q-Table that contains game states.
+              </p>
+              <p>
+                This <span class="emphasis">Q-Table</span> was populated,
+                updated, and refined by allowing the bot to discover optimal
+                moves for each possible game state via simulation.
+              </p>
+            </div>
+            <div class="tab-group">
+              <p>
+                During each episode (simulated game), the bot used a{" "}
+                <span class="emphasis">Q-Learning formula</span> to update the
+                Q-Table if an action helped the bot win.
+              </p>
+              <p>
+                Over time, the bot learned which moves lead to better outcomes,
+                and stored this knowledge in the Q-Table.
+              </p>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Q-Learning Formula</h3>
+              <p>
+                <span class="equation">
+                  Q(s, a) &larr; Q(s, a) + &alpha; [ r + &gamma; * max
+                  <sub>a'</sub> Q(s', a') - Q(s, a) ]
+                </span>
+              </p>
+              <p>
+                <ul class="equation smallList">
+                  <li>
+                    Q(s, a) = Estimated future reward from taking action a in
+                    state s
+                  </li>
+                  <li>
+                    &alpha; = Learning rate (How much to update Q-values with
+                    new info)
+                    <ul>
+                      <li>I used 0.1</li>
+                      <li>
+                        Lower value = slower learning but safer updates (less
+                        noisy)
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    &gamma; = Discount factor (how much to value future rewards)
+                    <ul>
+                      <li>I used 0.9</li>
+                      <li>
+                        Higher value = encourage long-term playing/results
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    r = Immediate reward (+1 for win, -1 for loss, 0 for ongoing
+                    state or tie)
+                  </li>
+                  <li>
+                    max<sub>a'</sub> Q(s', a') = Best future value from the next
+                    state (value estimated from current Q-table)
+                  </li>
+                </ul>
+              </p>
+            </div>
+            <div class="tab-group">
+              <p>
+                After 500,000 episodes (simulated games), Bot 5 has an optimal
+                and complete Q-Table, which it uses to make decisions.
+              </p>
+              <p>
+                The following stats and strategy charts (heatmaps for the bot's
+                behavior) represent data from{" "}
+                <span class="emphasis">1 Million</span> simulated games.
+              </p>
+              <p>
+                These 'testing' games were simulated AFTER the Q-Table was
+                complete. The strategy charts do not fully represent the
+                Q-Table, but instead give a simplified visualization of the
+                Bot's behavior.
+              </p>
             </div>
             <div class="tab-group">
               <h3 class="tab-title">Performance</h3>

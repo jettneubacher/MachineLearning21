@@ -129,9 +129,27 @@ html {
     height: 278px;
 }
 
+.equation {
+    color: var(--eText);
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: italic;
+}
 
+.equation.smallList {
+    font-size: 1rem;
+    text-align: left;
+    display: inline-block;
+}
 
 @media (max-width: 600px) {
+    .equation {
+        font-size: 1rem;
+    }
+    .equation.smallList {
+    font-size: 0.8rem;
+}
     .graph-img {
         width: 200px; /*1.671x*/
         height: 124px;
