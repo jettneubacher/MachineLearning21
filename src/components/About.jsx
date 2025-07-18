@@ -95,7 +95,7 @@ const About = ({ page, setPage, tab, setTab }) => {
                 optimal 21.
               </p>
               <p>
-                Becuase 21 is a fairly simple game (learn{" "}
+                Because 21 is a fairly simple game (learn{" "}
                 <span class="how2-link" onClick={() => setTab("how2")}>
                   How to Play
                 </span>
