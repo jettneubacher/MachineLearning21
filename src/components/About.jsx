@@ -18,6 +18,16 @@ const About = ({ page, setPage, tab, setTab }) => {
           <li class="tab-item">
             <button
               className={`pixel-button tab-button ${
+                tab === "how2" ? "red" : ""
+              }`}
+              onClick={() => setTab("how2")}
+            >
+              How?
+            </button>
+          </li>
+          <li class="tab-item">
+            <button
+              className={`pixel-button tab-button ${
                 tab === "bot1" ? "red" : ""
               }`}
               onClick={() => setTab("bot1")}
@@ -70,13 +80,192 @@ const About = ({ page, setPage, tab, setTab }) => {
       <div class="about-content">
         {tab === "welcome" && (
           <div class="welcome-tab">
-            <h1 class="about-title">Hi Peyton, testing updates rn</h1>
+            <div class="tab-group">
+              <h3>Welcome to Jett's</h3>
+              <h1 class="tab-title">Machine Learning 21!</h1>
+            </div>
+            <div class="tab-group">
+              <p>
+                Play 21 against the dealer OR witness one of my bots take on the
+                same challenge.
+              </p>
+              <p>
+                Each bot utilizes a different{" "}
+                <span class="emphasis">Machine Learning</span> technique to play
+                optimal 21.
+              </p>
+              <p>
+                Becuase 21 is a fairly simple game (learn{" "}
+                <span class="how2-link" onClick={() => setTab("how2")}>
+                  How to Play
+                </span>
+                ), this project's main focus is on the{" "}
+                <span class="emphasis">
+                  development and testing of ML algorithms
+                </span>
+                . As such, I urge you to learn more about my bots by explporing
+                the tabs on the left of the screen. Have fun!
+              </p>
+            </div>
+            <div class="tab-group">
+              <h2 class="tab-title">The Challenge</h2>
+              <p>
+                For most games of 21 (also known as Blackjack), the player's
+                chance to win is approximately <span class="emphasis">42%</span>
+                , while the dealer's is <span class="emphasis">49%</span>.
+              </p>
+              <p>
+                There are several strategies one can use: hi-low counts,
+                memorizing optimal moves, etc.
+              </p>
+              <p>
+                Each of my bots emulates a different strategy - some used by
+                humans, others too advanced for our brains to handle. As you
+                will see, the bots' performances are as good as,{" "}
+                <span class="emphasis">if not better than</span>, the average
+                real player, all thanks to Machine Learning!
+              </p>
+            </div>
+          </div>
+        )}
+        {tab == "how2" && (
+          <div class="how2-tab">
+            <div class="tab-group">
+              <h1 class="tab-title" id="how-to-play">
+                How to Play
+              </h1>
+              <br></br>
+              <h3 class="tab-title">Objective</h3>
+              <p>
+                The goal of the game is simple:{" "}
+                <span class="emphasis">Beat the Dealer!</span> Do this by
+                getting as close to <span class="emphasis">21</span> as possible
+                without busting (going over)!
+              </p>
+              <p>The player is ONLY playing against the Dealer.</p>
+              <br></br>
+              <h3 class="tab-title">Actions</h3>
+              <p>
+                At the start of every round, the player will recieve 2{" "}
+                <span class="emphasis">face-up cards</span>. The dealer will
+                receive <span class="emphasis">one face-up card</span> and{" "}
+                <span class="emphasis">one face-down card</span>.
+              </p>
+              <p>
+                The player can either <span class="emphasis">HIT</span> (take
+                another card) or <span class="emphasis">STAND</span> (end their
+                turn).{" "}
+              </p>
+
+              <br></br>
+              <p>
+                If the player chooses to 'hit', they can continue 'hitting'
+                until they either{" "}
+                <span class="emphasis">(1) choose to stand</span> or{" "}
+                <span class="emphasis">(2) bust</span> by exceeding a score of
+                21. When the player stands, their current score is FINAL and is
+                what will be tested against the Dealer's score.
+              </p>
+              <br></br>
+              <p>
+                If the player's first two cards are the same value, they can{" "}
+                <span class="emphasis">SPLIT</span>, which separates the cards
+                to create 2 new hands. These 2 hands will then be played
+                separately. If either hand wins, the player wins.
+              </p>
+              <br></br>
+              <h3 class="tab-title">Scoring</h3>
+              <p>
+                Cards are scored by their numeric value; face cards are worth 10
+                and Aces can be scored as 1 OR 11.
+              </p>
+              <br></br>
+              <h3 class="tab-title">Dealer's Turn</h3>
+              <p>
+                When the player turn ends, the Dealer will reveal their second
+                card.
+              </p>
+              <p>
+                The Dealer hit's until they have a score of{" "}
+                <span class="emphasis">17 or greater.</span>
+              </p>
+              <p>
+                The Dealer will also hit on a soft 17 (one of their cards is an
+                Ace scored as 11).
+              </p>
+
+              <br></br>
+              <h3 class="tab-title">How to Win</h3>
+              <p>
+                So how does the player <span class="emphasis">Win</span>?
+              </p>
+              <p>If the player busts, they automatically LOSE.</p>
+              <p>
+                If the player does not bust but the Dealer does, the player
+                WINS.
+              </p>
+              <p>If neither bust, whoever is closer to 21 WINS.</p>
+              <p>If neither bust and the scores are equal, it is a TIE.</p>
+            </div>
           </div>
         )}
         {tab === "bot1" && (
           <div class="bot1-tab">
+            <div class="tab-group">
+              <h1 class="tab-title">Bot 1</h1>
+            </div>
+            <div class="tab-group">
+              <p>action = "hit" if total {"<"}= 16 else "stand"</p>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Performance</h3>
+              <p>Win Rate: 40.7%</p>
+              <p>Bust Rate: 0.283 per turn</p>
+              <p>Avg Score: 20.314</p>
+              <div class="stat-wrapper">
+                <img
+                  src="./stats/wr1.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/br1.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/avg1.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+              </div>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Behavior</h3>
+              <p>Hit Rate: 0.896 per turn</p>
+              <p>Stand Rate: 0.595 per turn</p>
+              <div class="stat-wrapper">
+                <img
+                  src="./stats/hr1.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/sr1.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+              </div>
+            </div>
+            <h3 class="tab-title">Strategy Charts</h3>
+            <p>Visualize Bot's actions for each possible hand</p>
+            <p> Left Column = Player Cards </p>
+            <p> Red = Hit </p>
             <div class="strat-chart" id="table1">
               <div class="soft-table">
+                <div class="table-title">
+                  <h4>Soft Player Scores</h4>
+                </div>
                 <table class="strat-table">
                   <tr>
                     <th colSpan="11" class="table-top-row">
@@ -216,6 +405,9 @@ const About = ({ page, setPage, tab, setTab }) => {
                 </table>
               </div>
               <div clas="hard-table">
+                <div class="table-title">
+                  <h4>Hard Player Scores</h4>
+                </div>
                 <table class="strat-table">
                   <tr>
                     <th colSpan="11" class="table-top-row">
@@ -476,8 +668,61 @@ const About = ({ page, setPage, tab, setTab }) => {
         )}
         {tab === "bot2" && (
           <div class="bot2-tab">
+            <div class="tab-group">
+              <h1 class="tab-title">Bot 2</h1>
+            </div>
+            <div class="tab-group">
+              <p>about bot</p>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Performance</h3>
+              <p>Win Rate: 43.4%</p>
+              <p>Bust Rate: 0.182 per turn</p>
+              <p>Avg Score: 18.871</p>
+              <div class="stat-wrapper">
+                <img
+                  src="./stats/wr2.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/br2.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/avg2.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+              </div>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Behavior</h3>
+              <p>Hit Rate: 0.705 per turn</p>
+              <p>Stand Rate: 0.711 per turn</p>
+              <div class="stat-wrapper">
+                <img
+                  src="./stats/hr2.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/sr2.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+              </div>
+            </div>
+            <h3 class="tab-title">Strategy Charts</h3>
+            <p>Visualize Bot's actions for each possible hand</p>
+            <p> Left Column = Player Cards </p>
+            <p> Red = Hit </p>
             <div class="strat-chart" id="table2">
               <div class="soft-table">
+                <div class="table-title">
+                  <h4>Soft Player Scores</h4>
+                </div>
                 <table class="strat-table">
                   <tr>
                     <th colSpan="11" class="table-top-row">
@@ -617,6 +862,9 @@ const About = ({ page, setPage, tab, setTab }) => {
                 </table>
               </div>
               <div clas="hard-table">
+                <div class="table-title">
+                  <h4>Hard Player Scores</h4>
+                </div>
                 <table class="strat-table">
                   <tr>
                     <th colSpan="11" class="table-top-row">
@@ -877,8 +1125,61 @@ const About = ({ page, setPage, tab, setTab }) => {
         )}
         {tab === "bot3" && (
           <div class="bot3-tab">
+            <div class="tab-group">
+              <h1 class="tab-title">Bot 3</h1>
+            </div>
+            <div class="tab-group">
+              <p>about bot</p>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Performance</h3>
+              <p>Win Rate: 40.5%</p>
+              <p>Bust Rate: 0.0 per turn</p>
+              <p>Avg Score: 15.282</p>
+              <div class="stat-wrapper">
+                <img
+                  src="./stats/wr3.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/br3.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/avg3.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+              </div>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Behavior</h3>
+              <p>Hit Rate: 0.167 per turn</p>
+              <p>Stand Rate: 0.946 per turn</p>
+              <div class="stat-wrapper">
+                <img
+                  src="./stats/hr3.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/sr3.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+              </div>
+            </div>
+            <h3 class="tab-title">Strategy Charts</h3>
+            <p>Visualize Bot's actions for each possible hand</p>
+            <p> Left Column = Player Cards </p>
+            <p> Red = Hit </p>
             <div class="strat-chart" id="table3">
               <div class="soft-table">
+                <div class="table-title">
+                  <h4>Soft Player Scores</h4>
+                </div>
                 <table class="strat-table">
                   <tr>
                     <th colSpan="11" class="table-top-row">
@@ -1018,6 +1319,9 @@ const About = ({ page, setPage, tab, setTab }) => {
                 </table>
               </div>
               <div clas="hard-table">
+                <div class="table-title">
+                  <h4>Hard Player Scores</h4>
+                </div>
                 <table class="strat-table">
                   <tr>
                     <th colSpan="11" class="table-top-row">
@@ -1278,8 +1582,61 @@ const About = ({ page, setPage, tab, setTab }) => {
         )}
         {tab === "bot4" && (
           <div class="bot4-tab">
+            <div class="tab-group">
+              <h1 class="tab-title">Bot 4</h1>
+            </div>
+            <div class="tab-group">
+              <p>about bot</p>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Performance</h3>
+              <p>Win Rate: 45.0%</p>
+              <p>Bust Rate: 0.333 per turn</p>
+              <p>Avg Score: 20.738</p>
+              <div class="stat-wrapper">
+                <img
+                  src="./stats/wr4.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/br4.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/avg4.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+              </div>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Behavior</h3>
+              <p>Hit Rate: 1.064 per turn</p>
+              <p>Stand Rate: 0.544 per turn</p>
+              <div class="stat-wrapper">
+                <img
+                  src="./stats/hr4.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/sr4.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+              </div>
+            </div>
+            <h3 class="tab-title">Strategy Charts</h3>
+            <p>Visualize Bot's actions for each possible hand</p>
+            <p> Left Column = Player Cards </p>
+            <p> Red = Hit EVERYTIME, Number = Rate Bot Hits </p>
             <div class="strat-chart" id="table4">
               <div class="soft-table">
+                <div class="table-title">
+                  <h4>Soft Player Scores</h4>
+                </div>
                 <table class="strat-table">
                   <tr>
                     <th colSpan="11" class="table-top-row">
@@ -1314,63 +1671,63 @@ const About = ({ page, setPage, tab, setTab }) => {
                   </tr>
                   <tr>
                     <th>A,9</th>
-                    <td>69.23</td>
-                    <td>81.25</td>
-                    <td>90.91</td>
-                    <td>61.54</td>
-                    <td>62.5</td>
-                    <td>62.5</td>
-                    <td>72.73</td>
-                    <td>44.44</td>
-                    <td>59.02</td>
-                    <td>50.0</td>
+                    <td>69</td>
+                    <td>81</td>
+                    <td>90</td>
+                    <td>61</td>
+                    <td>62</td>
+                    <td>62</td>
+                    <td>72</td>
+                    <td>44</td>
+                    <td>59</td>
+                    <td>50</td>
                   </tr>
                   <tr>
                     <th>A,8</th>
-                    <td>56.25</td>
-                    <td>55.56</td>
-                    <td>40.0</td>
-                    <td>60.0</td>
-                    <td>66.67</td>
-                    <td>46.15</td>
-                    <td>57.89</td>
-                    <td>50.0</td>
-                    <td>51.19</td>
-                    <td>33.33</td>
+                    <td>56</td>
+                    <td>55</td>
+                    <td>40</td>
+                    <td>60</td>
+                    <td>66</td>
+                    <td>46</td>
+                    <td>57</td>
+                    <td>50</td>
+                    <td>51</td>
+                    <td>33</td>
                   </tr>
                   <tr>
                     <th>A,7</th>
-                    <td>56.25</td>
-                    <td>56.52</td>
-                    <td>38.46</td>
-                    <td>48.0</td>
-                    <td>52.38</td>
-                    <td>41.67</td>
-                    <td>22.22</td>
-                    <td>52.38</td>
-                    <td>43.01</td>
-                    <td>91.3</td>
+                    <td>56</td>
+                    <td>56</td>
+                    <td>38</td>
+                    <td>48</td>
+                    <td>52</td>
+                    <td>41</td>
+                    <td>22</td>
+                    <td>52</td>
+                    <td>43</td>
+                    <td>91</td>
                   </tr>
                   <tr>
                     <th>A,6</th>
-                    <td>46.67</td>
-                    <td>50.0</td>
-                    <td>50.0</td>
-                    <td>64.29</td>
-                    <td>64.29</td>
-                    <td>88.24</td>
-                    <td>96.3</td>
+                    <td>46</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>64</td>
+                    <td>64</td>
+                    <td>88</td>
+                    <td>96</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
                   </tr>
                   <tr>
                     <th>A,5</th>
-                    <td>40.91</td>
-                    <td>18.75</td>
-                    <td>33.33</td>
-                    <td>37.5</td>
-                    <td>50.0</td>
+                    <td>40</td>
+                    <td>18</td>
+                    <td>33</td>
+                    <td>37</td>
+                    <td>50</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
@@ -1379,11 +1736,11 @@ const About = ({ page, setPage, tab, setTab }) => {
                   </tr>
                   <tr>
                     <th>A,4</th>
-                    <td>93.75</td>
-                    <td>93.75</td>
+                    <td>93</td>
+                    <td>93</td>
                     <td class="hit-cell">&nbsp;</td>
-                    <td>47.62</td>
-                    <td>40.0</td>
+                    <td>47</td>
+                    <td>40</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
@@ -1396,7 +1753,7 @@ const About = ({ page, setPage, tab, setTab }) => {
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
-                    <td>84.62</td>
+                    <td>84</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
@@ -1419,6 +1776,9 @@ const About = ({ page, setPage, tab, setTab }) => {
                 </table>
               </div>
               <div clas="hard-table">
+                <div class="table-title">
+                  <h4>Hard Player Scores</h4>
+                </div>
                 <table class="strat-table">
                   <tr>
                     <th colSpan="11" class="table-top-row">
@@ -1488,7 +1848,7 @@ const About = ({ page, setPage, tab, setTab }) => {
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>94.87</td>
+                    <td>94</td>
                   </tr>
                   <tr>
                     <th>17</th>
@@ -1497,7 +1857,7 @@ const About = ({ page, setPage, tab, setTab }) => {
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>95.92</td>
+                    <td>95</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
@@ -1505,8 +1865,8 @@ const About = ({ page, setPage, tab, setTab }) => {
                   </tr>
                   <tr>
                     <th>16</th>
-                    <td>44.68</td>
-                    <td>13.16</td>
+                    <td>44</td>
+                    <td>13</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -1518,11 +1878,11 @@ const About = ({ page, setPage, tab, setTab }) => {
                   </tr>
                   <tr>
                     <th>15</th>
-                    <td>97.56</td>
-                    <td>94.59</td>
-                    <td>83.67</td>
-                    <td>40.0</td>
-                    <td>2.08</td>
+                    <td>97</td>
+                    <td>94</td>
+                    <td>83</td>
+                    <td>40</td>
+                    <td>2</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
@@ -1535,7 +1895,7 @@ const About = ({ page, setPage, tab, setTab }) => {
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
-                    <td>85.19</td>
+                    <td>85</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
                     <td class="hit-cell">&nbsp;</td>
@@ -1679,8 +2039,61 @@ const About = ({ page, setPage, tab, setTab }) => {
         )}
         {tab === "bot5" && (
           <div class="bot5-tab">
+            <div class="tab-group">
+              <h1 class="tab-title">Bot 5</h1>
+            </div>
+            <div class="tab-group">
+              <p>about bot</p>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Performance</h3>
+              <p>Win Rate: 42.5%</p>
+              <p>Bust Rate: 0.229 per turn</p>
+              <p>Avg Score: 19.510</p>
+              <div class="stat-wrapper">
+                <img
+                  src="./stats/wr5.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/br5.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/avg5.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+              </div>
+            </div>
+            <div class="tab-group">
+              <h3 class="tab-title">Behavior</h3>
+              <p>Hit Rate: 0.791 per turn</p>
+              <p>Stand Rate: 0.656 per turn</p>
+              <div class="stat-wrapper">
+                <img
+                  src="./stats/hr5.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+                <img
+                  src="./stats/sr5.png"
+                  alt="graph image"
+                  class="graph-img"
+                />
+              </div>
+            </div>
+            <h3 class="tab-title">Strategy Charts</h3>
+            <p>Visualize Bot's actions for each possible hand</p>
+            <p> Left Column = Player Cards </p>
+            <p> Red = Hit </p>
             <div class="strat-chart" id="table5">
               <div class="soft-table">
+                <div class="table-title">
+                  <h4>Soft Player Scores</h4>
+                </div>
                 <table class="strat-table">
                   <tr>
                     <th colSpan="11" class="table-top-row">
@@ -1820,6 +2233,9 @@ const About = ({ page, setPage, tab, setTab }) => {
                 </table>
               </div>
               <div clas="hard-table">
+                <div class="table-title">
+                  <h4>Hard Player Scores</h4>
+                </div>
                 <table class="strat-table">
                   <tr>
                     <th colSpan="11" class="table-top-row">

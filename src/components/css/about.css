@@ -4,6 +4,7 @@
     height: 95vh;
 }
 
+
 .tabs {
     width: 10%;
     position: fixed;
@@ -28,11 +29,7 @@
     padding-top: 5px;
 }
 
-@media (max-width: 600px) {
-    .tab-button{
-        font-size: 0.6rem;
-    }
-}
+
 
 .tab-button.selected{
 
@@ -41,11 +38,44 @@
 .about-content{
     width: 90%;
     margin-left: 11%;
-    margin-right: 5%; 
+    margin-right: 5%;
+    font-size: 0.75rem; 
+    line-height: 1.5;
+    text-align: center;
+}
+
+.tab-group {
+    padding-bottom: 2rem;
+}
+
+
+.tab-title {
+    text-decoration: underline;
+}
+
+.welcome-tab .tab-group{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.emphasis {
+    font-size: 0.8rem;
+    color: var(--eText);
 }
 
 .welcome-tab{
     text-align: center;
+}
+
+.strat-chart {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.table-title {
+    line-height: 0.75;
+    margin-bottom: -10px;
 }
 
 .strat-table {
@@ -67,15 +97,81 @@
 
 .strat-table th {
     border: 2px solid #fff;
-
+    padding: 3px;
 }
 
-.strat-table td, .strat-table td {
+.strat-table td {
     border: 2px solid #fff;
+    font-size: 0.7rem;
+    font-family: system-ui;
 }
 
 .strat-table td,
 .strat-table th:not(.table-top-row) {
   width: 2rem;     /* Set your fixed size */
   height: 2rem;
+}
+
+.how2-link{
+    text-decoration: underline;
+    color:#3c7596;
+    cursor: pointer;
+}
+html {
+  scroll-behavior: smooth;
+}
+#how-to-play {
+  scroll-margin-top: 70px;
+}
+
+.graph-img {
+    width: 450px; /*1.671x*/
+    height: 278px;
+}
+
+
+
+@media (max-width: 600px) {
+    .graph-img {
+        width: 200px; /*1.671x*/
+        height: 124px;
+    }
+    .tab-button{
+        font-size: 0.5rem;
+    }
+    .about-content{
+        width: 80%;
+        margin-left: 20%;
+        margin-right: 3%; 
+        font-size: 0.6rem;
+    }
+    
+    .strat-table th {
+        padding: 1px;
+    }
+
+    .strat-table td {
+        font-size: 0.5rem;
+    }
+
+    .strat-table td,
+    .strat-table th:not(.table-top-row) {
+        width: 1rem;     /* Set your fixed size */
+        height: 1rem;
+    }
+    .welcome-tab .tab-group{
+    margin-left: 0;
+    margin-right: 0;
+}
+}
+
+@media (max-width: 750px) {
+    .strat-chart{
+        flex-direction: column;
+
+    }
+    .about-content{
+        font-size: 0.65rem;
+        margin-left: 15%;
+   }
 }
