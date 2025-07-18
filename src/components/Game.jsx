@@ -132,8 +132,13 @@ const Game = ({ currentPlayer, setCurrentPlayer, backendReady }) => {
       await delay(1500);
     }
 
+    if (isBust(currentDHand)) {
+      setMessage((prev) => [...prev, "Dealer busts!"]);
+    } else {
+      setMessage((prev) => [...prev, "Dealer stands"]);
+    }
+
     setDeck(finalDeck);
-    setMessage((prev) => [...prev, "Dealer stands"]);
     await delay(500);
     // CHECK WINNER
     const pResult = checkWinner(forcedPlayerHand, currentDHand);
