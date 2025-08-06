@@ -39,13 +39,15 @@
     width: 90%;
     margin-left: 11%;
     margin-right: 5%;
-    font-size: 0.75rem; 
-    line-height: 1.5;
+    font-size: 1.25rem; 
+    line-height: 1;
     text-align: center;
+    font-family:'Times New Roman', Times, serif;
+
 }
 
 .tab-group {
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 
@@ -59,7 +61,7 @@
 }
 
 .emphasis {
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     color: var(--eText);
 }
 
@@ -162,7 +164,10 @@ html {
         margin-left: 25%;
         padding-left: 1rem;
         margin-right: 5%; 
-        font-size: 0.6rem;
+        font-size: 1rem;
+    }
+    .emphasis {
+        font-size: 1rem;
     }
     
     .strat-table th {
@@ -190,7 +195,8 @@ html {
 
     }
     .about-content{
-        font-size: 0.65rem;
+        font-size: 0.9rem;
         margin-left: 15%;
    }
+
 }
